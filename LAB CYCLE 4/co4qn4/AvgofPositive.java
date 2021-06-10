@@ -22,32 +22,32 @@ public class AvgofPositive {
 	    System.out.println("Enter the total number to find average:");
 	    n = sc.nextInt();
 	    num = new int[n];
-	    System.out.println("Enter the numbers:");
-	    for(i=0;i<n;i++)
-	    {
-	        num[i] = sc.nextInt();
-	    }
-	    for(i=0;i<n;i++) {
-	    	try {
-		    	if(num[i]<0)
-		    	{
-		    		throw new NegativeIntException("Entered numbers must positive");
-		    	}
-		    	else 
-		    	{
-			      sum = sum + num[i];
-			      count++;
-		    	}
+	    try {
+	    	System.out.println("Enter the numbers:");
+		    for(i=0;i<n;i++)
+		    {
+		        num[i] = sc.nextInt();
 		    }
-	    	catch(NegativeIntException e) {
-	    		System.out.println("Exception Occurred..... "+e);
-	    	}
+		    for(i=0;i<n;i++) 
+		    {
+			    	if(num[i]<0)
+			    	{
+			    		throw new NegativeIntException("Entered numbers must positive");
+			    	}
+			    	else 
+			    	{
+				      sum = sum + num[i];
+				      count++;
+			    	}
+		    }
+		    avg=sum/count;
+		    System.out.println("Average :"+avg);
 	    }
-	    avg=sum/count;
-	    System.out.println("Average :"+avg);
+	     catch(NegativeIntException e) {
+    		System.out.println("Exception Occurred..... "+e);
+    	}
 	    
 		// TODO Auto-generated method stub
-		
 	}
 
 }
