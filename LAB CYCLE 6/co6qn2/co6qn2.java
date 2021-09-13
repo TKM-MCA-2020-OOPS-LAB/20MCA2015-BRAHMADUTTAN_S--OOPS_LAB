@@ -13,20 +13,17 @@ public class co6qn2 {
 			FileWriter fw = new FileWriter("file1.txt");
 			fw.write("Hi User welcome to Java Programming \n");
 			fw.write("Here is your first program");
+			fw.close();
 			
 			FileReader fr = new FileReader("file1.txt");
 			BufferedReader br = new BufferedReader(fr);
-			
-            String line = null, s = "";
+			System.out.println("file content: "); 
+            String line;
             while((line = br.readLine()) != null)
             {
-                s += line;
+                System.out.println(line);
             }
-            System.out.println(s);
-			fw.close();
-			fr.close();
-			
-			
+			fr.close();	
 		}
 		catch (IOException e)
 		{
